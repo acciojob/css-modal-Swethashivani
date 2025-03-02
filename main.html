@@ -1,16 +1,61 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            width: 300px;
+        }
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .close-modal {
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-size: 20px;
+        }
+        #openModal:focus + .modal,
+        .modal:target {
+            display: flex;
+        }
+    </style>
 </head>
-
 <body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
-
+    <a href="#myModal" id="openModal">Open Modal</a>
+    <div class="modal" id="myModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Modal Header</h2>
+                <a href="#" class="close-modal">&times;</a>
+            </div>
+            <div class="modal-body">
+                <p>Modal Body Content</p>
+            </div>
+        </div>
+    </div>
 </body>
-
 </html>
